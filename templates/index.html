@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Wall</title>
+</head>
+<body>
+<h3>{{stuff>0}}</h3>
+<h1>Registration:</h1>
+	{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+	<form action='/reg' method='post'>
+		First Name: <input type='text' name='first_name' value="{{first}}"><br>
+		Last Name: <input type='text' name='last_name' value="{{last}}"><br>
+		Email: <input type='text' name='email' value="{{mail}}"><br>
+		Username: <input type="text" name="username" value="{{user}}"><br>
+		Password: <input type='password' name='password'><br>
+		Confirm Password: <input type='password' name='pass_conf'><br>
+	<input type='submit' value='Register'>
+</body>
+</html>
